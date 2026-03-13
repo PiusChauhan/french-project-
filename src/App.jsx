@@ -1,0 +1,29 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Destinations from './pages/Destinations';
+import Culture from './pages/Culture';
+import Guide from './pages/Guide';
+import Contact from './pages/Contact';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/destinations" element={<Destinations />} />
+          <Route path="/culture" element={<Culture />} />
+          <Route path="/guide" element={<Guide />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
