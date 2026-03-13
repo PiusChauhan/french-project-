@@ -1,0 +1,16 @@
+.culture {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.culture h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.culture p {
+    color: #666;
+    line-height: 1.6;
+}
