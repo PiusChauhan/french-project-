@@ -1,16 +1,123 @@
-.culture {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
+/* ===== CULTURE PAGE ===== */
+.culture-page {
+  background: var(--gray-50);
 }
 
-.culture h1 {
-    color: #333;
-    font-size: 24px;
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-.culture p {
-    color: #666;
-    line-height: 1.6;
+.culture-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  transition: var(--transition);
+}
+
+.culture-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+.culture-card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.culture-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.culture-card:hover .culture-card-image img {
+  transform: scale(1.06);
+}
+
+.culture-card-icon {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.culture-card-body {
+  padding: 28px 24px 24px;
+}
+
+.culture-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.culture-card-body p {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ===== PAGE HERO (shared) ===== */
+.page-hero {
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 40px 24px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.page-hero-content h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.page-hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    min-height: 260px;
+  }
+
+  .page-hero-content h1 {
+    font-size: 2rem;
+  }
 }

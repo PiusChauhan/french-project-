@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import DestinationCard from '../components/DestinationCard';
-import Button from '../components/Button';
-import '../styles/home.css';
+import DestinationCard from '../DestinationCard';
+import Button from '../Button';
+import '../../styles/home.css';
 
 function Home() {
   const [stats, setStats] = useState([
@@ -14,7 +13,7 @@ function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setStats(prevStats => 
+      setStats(prevStats =>
         prevStats.map(stat => ({
           ...stat,
           number: Math.min(stat.number + 1, stat.final)
@@ -30,7 +29,7 @@ function Home() {
       name: 'Eiffel Tower',
       location: 'Paris',
       badge: 'Must See',
-      image: 'https://images.unsplash.com/photo-1502602898657-fa38591595e0?w=500&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?w=500&h=400&fit=crop',
       rating: '★★★★★',
       reviews: '2,500',
       description: 'The iconic iron lattice tower with breathtaking views of Paris from three observation levels.',
@@ -40,7 +39,7 @@ function Home() {
       name: 'The Louvre',
       location: 'Paris',
       badge: 'Cultural',
-      image: 'https://images.unsplash.com/photo-1499856871957-5b8620a42033?w=500&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1565099824688-e93eb20fe622?w=500&h=400&fit=crop',
       rating: '★★★★★',
       reviews: '3,200',
       description: 'The world\'s largest art museum with over 35,000 artworks including the Mona Lisa.',
@@ -50,7 +49,7 @@ function Home() {
       name: 'Mont-Saint-Michel',
       location: 'Normandy',
       badge: 'UNESCO',
-      image: 'https://images.unsplash.com/photo-1488747807830-63789f68bb65?w=500&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1671010496251-22eab06e3292?w=500&h=400&fit=crop',
       rating: '★★★★★',
       reviews: '1,800',
       description: 'A stunning medieval monastery on a tidal island, one of France\'s most iconic sights.',
@@ -60,7 +59,7 @@ function Home() {
       name: 'French Riviera',
       location: 'Côte d\u0027Azur',
       badge: 'Beach',
-      image: 'https://images.unsplash.com/photo-1511739001486-6bfe966ce51b?w=500&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1692734686010-be90ca50a3fa?w=500&h=400&fit=crop',
       rating: '★★★★☆',
       reviews: '2,100',
       description: 'Glamorous Mediterranean coastline with beautiful beaches and upscale lifestyle.',
@@ -70,7 +69,7 @@ function Home() {
       name: 'Provence',
       location: 'South France',
       badge: 'Nature',
-      image: 'https://images.unsplash.com/photo-1524978122844-abcc67833c38?w=500&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1723916687481-8b64bbfb56e1?w=500&h=400&fit=crop',
       rating: '★★★★★',
       reviews: '1,900',
       description: 'Picturesque countryside with lavender fields, charming villages, and world-class wines.',
@@ -80,7 +79,7 @@ function Home() {
       name: 'Palace of Versailles',
       location: 'Near Paris',
       badge: 'Palace',
-      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1706192878987-f893eb8cd632?w=500&h=400&fit=crop',
       rating: '★★★★★',
       reviews: '2,700',
       description: 'Opulent royal residence with stunning gardens, fountains, and the Hall of Mirrors.',
@@ -128,11 +127,12 @@ function Home() {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1>Discover the Magic of France</h1>
-          <p>Experience culture, cuisine, and charm in the world's most visited destination</p>
+          <span className="section-label">Welcome to France</span>
+          <h1>Discover the Magic of <em>France</em></h1>
+          <p>From the romantic streets of Paris to the lavender fields of Provence — experience the culture, cuisine, and charm of the world's most visited destination.</p>
           <div className="hero-buttons">
-            <Button to="/destinations" variant="primary">Explore Destinations</Button>
-            <Button to="/culture" variant="secondary">Learn More</Button>
+            <Button to="/destinations" variant="primary">Explore Destinations →</Button>
+            <Button to="/culture" variant="secondary">Discover Culture</Button>
           </div>
         </div>
       </section>
@@ -142,7 +142,7 @@ function Home() {
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div key={index} className="stat-card">
-                <h3 className="stat-number">{stat.number}{stat.label === 'Most Visited' ? '' : stat.label === 'Annual Visitors' ? 'M+' : '+' }</h3>
+                <h3 className="stat-number">{stat.number}{stat.label === 'Most Visited' ? '' : stat.label === 'Annual Visitors' ? 'M+' : '+'}</h3>
                 <p className="stat-label">{stat.label}</p>
               </div>
             ))}

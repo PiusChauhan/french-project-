@@ -1,0 +1,73 @@
+/* ===== GUIDE PAGE ===== */
+.guide-page {
+  background: var(--gray-50);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.guide-card {
+  background: var(--white);
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  transition: var(--transition);
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.guide-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.guide-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.guide-card ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guide-card ul li {
+  color: var(--gray-600);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
+}
+
+.guide-card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--azure);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+}

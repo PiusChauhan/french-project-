@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Destinations from './pages/Destinations';
-import Culture from './pages/Culture';
-import Guide from './pages/Guide';
-import Contact from './pages/Contact';
+import Home from './components/pages/Home';
+import Destinations from './components/pages/Destinations';
+import Culture from './components/pages/Culture';
+import Guide from './components/pages/Guide';
+import Contact from './components/pages/Contact';
 
 function App() {
   return (
