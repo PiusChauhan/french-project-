@@ -45,7 +45,7 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p>&copy; {new Date().getFullYear()} France Tourism. All rights reserved.</p>
-                    <p>Made with ❤️ for travelers worldwide</p>
+                    <p>Made by Nalin</p>
                 </div>
             </div>
         </footer>
